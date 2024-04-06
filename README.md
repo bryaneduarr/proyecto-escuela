@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+#### Pasos para iniciar localmente el proyecto-escuela
 
-First, run the development server:
+#### Prerequisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Sistemas operativos compatibles**: macOS, Windows 10, Windows 11, (incluido WSL) y Linux son compatibles.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Descargas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Node.js**: Asegúrate de tener instalada la versión **18.17 o posterior** de Node.js, recomiendo utilizar la ultima version que podras encontrar aqui https://nodejs.org/en/download, favor descarga la version estable (LTS).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Git**: Asegurate de tener instalada la ultima version de `Git`, podras encontrar el ejecutable de instalcion para Windows en este link: https://git-scm.com/downloads
 
-## Learn More
+**Visual Studio Code**: Descarga la ultima version del editor de codigo `Visual Studio Code`, tambien puedes utilizar el editor de tu preferencia, pero te recomiendo este.
 
-To learn more about Next.js, take a look at the following resources:
+#### Ejecucion del proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Una vez teniendo `Git`, `Visual Studio Code` y `Nodejs` instalados en tu sistema operativo sigue los siguientes pasos:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Abre Visual Studio Code.
 
-## Deploy on Vercel
+- Abre la terminal integrada puedes hacerlo yendo a la barra superior y buscando la seleccion que diga `Terminal` cuando la encuentres puedes hacer clic y abres una `nueva terminal`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- En la terminal coloca el siuiente comando: `git clone https://github.com/bryaneduarr/proyecto-escuela.git`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- El comando anterior servira para clonar el repositorio e descargar los archivos de codigo en tu computadora. Espera a que termine el proceso para continuar.
+
+- Una vez lista la clonacion del repositorio puedes ejecutar el comando: `npm install`. 
+
+- El comando anterior instalara todas las librerias que se ocuparon para desarrollar el proyecto. Espera a que el proceso de instalacion termine
+
+- Por ultimo puedes ejecutar el proyecto usando: `npm run dev`, esto abrira un servidor local de `nextjs` en la direccion `localhost:3000`, aqui podras ver el proyecto funcionando desde tu computadora local.
