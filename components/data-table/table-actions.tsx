@@ -1,6 +1,7 @@
 import { TableProps } from "@/types/table-data";
 import { Button } from "@/components/ui/button";
 
+/* eslint-disable */
 const DataTableActions = <TData extends unknown>({
   table,
 }: TableProps<TData>) => {

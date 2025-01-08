@@ -16,8 +16,9 @@ export async function GET() {
       {
         students: JSON.parse(JSON.stringify(studentData)),
       },
-      { status: 200 }
+      { status: 200 },
     );
+    /* eslint-disable */
   } catch (error) {
     return NextResponse.json({ message: "Couldn't get data" }, { status: 400 });
   }

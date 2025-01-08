@@ -10,7 +10,7 @@ import StudentGradesPutApiOnSubmit from "@/lib/student-grades/student-grades-put
 import StudentGradesContainer from "@/components/form-fields/student-grades/student-grades-container";
 
 /** En la pagina de editar las notas del estudiante, esto va a ser dependiendo el ID que tenga el estudiante
- *  Tambien va a debender que clase tenga en la URL como parametro asi se va a saber a que clase debemos de 
+ *  Tambien va a debender que clase tenga en la URL como parametro asi se va a saber a que clase debemos de
  *  modificar las notas, la funcion GetMethodByIdFromStudentGradesData se utiliza para traer la informacion
  *  necesaria dependiendo los casos anteriores. Por ultimo renderizamos la pagina con todos los componentes.
  */
@@ -28,7 +28,7 @@ const EditStudentGrade = ({ params }: CellContextId<UserStudentTeacher>) => {
     GetMethodByIdFromStudentGradesData(
       params.editStudentGradeId,
       "student-grades",
-      String(classSubject)
+      String(classSubject),
     ).then((studentGrades) => setStudentGradesData(studentGrades));
   }, [params.editStudentGradeId, classSubject]);
 

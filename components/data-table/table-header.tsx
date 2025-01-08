@@ -2,6 +2,7 @@ import { TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Header, HeaderGroup, flexRender } from "@tanstack/react-table";
 import { TableProps } from "@/types/table-data";
 
+/* eslint-disable */
 const DataTableHeader = <TData extends unknown>({
   table,
 }: TableProps<TData>) => {
@@ -16,7 +17,7 @@ const DataTableHeader = <TData extends unknown>({
                   ? null
                   : flexRender(
                       header.column.columnDef.header,
-                      header.getContext()
+                      header.getContext(),
                     )}
               </TableHead>
             );

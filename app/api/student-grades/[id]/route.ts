@@ -12,6 +12,7 @@ import connectToDataBase from "@/lib/mongodb";
  *  nombre, ID, y las notas del alumno
  */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function GET(request: NextRequest, { params }: any) {
   try {
     const db = await connectToDataBase();
@@ -44,7 +45,7 @@ export async function GET(request: NextRequest, { params }: any) {
       .toArray();
 
     const studentData =
-      studentDataArray?.length! > 0 ? studentDataArray![0] : {};
+      studentDataArray?.length! > 0 ? studentDataArray![0] : {}; // eslint-disable-line
 
     return NextResponse.json(JSON.parse(JSON.stringify(studentData)));
   } catch (error) {
@@ -52,7 +53,7 @@ export async function GET(request: NextRequest, { params }: any) {
   }
 }
 
-/** Para la funcion PUT para poner las notas del alumno usamos el mismo metodo anterior del ID, luego de eso 
+/** Para la funcion PUT para poner las notas del alumno usamos el mismo metodo anterior del ID, luego de eso
  *  verificamos gracias a los esquemas hechos por "Zod" si la informacion que vamos a pasar esta correcta para
  *  que la base de datos la reciba correctamente, una vez hecho eso nos metemos a cada nota y la actualizamos
  *  para luego actualizar los datos en los estudiantes.
@@ -68,7 +69,7 @@ export async function PUT(request: NextRequest, { params }: ApiPut<Student>) {
       request.nextUrl.searchParams.get("subjectClass");
 
     const validationStudentSchema = studentsTeacherUserGrades.safeParse(
-      await request.json()
+      await request.json(),
     );
 
     if (!validationStudentSchema.success) {
@@ -78,16 +79,20 @@ export async function PUT(request: NextRequest, { params }: ApiPut<Student>) {
     }
 
     const updateObjectSubject = {
-      [`studentGrades.${querySubjectParameter}`]: (
-        validationStudentSchema.data.studentGrades as { [key: string]: any }
-      )[String(querySubjectParameter)],
+      [`studentGrades.${querySubjectParameter}`]:
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (validationStudentSchema.data.studentGrades as { [key: string]: any })[
+          String(querySubjectParameter)
+        ],
     };
 
-    db?.collection("students").findOneAndUpdate(
-      { _id: new ObjectId(id) },
-      { $set: updateObjectSubject },
-      { returnDocument: "after" }
-    );
+    db
+      ?.collection("students")
+      .findOneAndUpdate(
+        { _id: new ObjectId(id) },
+        { $set: updateObjectSubject },
+        { returnDocument: "after" },
+      );
 
     return NextResponse.json({ message: "Fields updated" }, { status: 200 });
   } catch (error) {

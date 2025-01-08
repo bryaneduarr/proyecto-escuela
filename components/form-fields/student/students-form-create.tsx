@@ -23,7 +23,7 @@ const StudentsFormCreate = ({
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(
-            onSubmit as SubmitHandler<OriginalStudentSchema>
+            onSubmit as SubmitHandler<OriginalStudentSchema>,
           )}
           className="space-y-8"
         >

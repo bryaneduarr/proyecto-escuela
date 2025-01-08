@@ -1,4 +1,3 @@
-
 #### Pasos para iniciar localmente el proyecto-escuela
 
 #### Prerequisitos
@@ -25,7 +24,7 @@ Una vez teniendo `Git`, `Visual Studio Code` y `Nodejs` instalados en tu sistema
 
 - El comando anterior servira para clonar el repositorio e descargar los archivos de codigo en tu computadora. Espera a que termine el proceso para continuar.
 
-- Una vez lista la clonacion del repositorio puedes ejecutar el comando: `npm install`. 
+- Una vez lista la clonacion del repositorio puedes ejecutar el comando: `npm install`.
 
 - El comando anterior instalara todas las librerias que se ocuparon para desarrollar el proyecto. Espera a que el proceso de instalacion termine
 

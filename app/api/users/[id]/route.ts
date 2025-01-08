@@ -3,6 +3,7 @@ import connectToDataBase from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function GET(request: NextRequest, { params }: any) {
   const { id } = params;
 
@@ -32,11 +33,12 @@ export async function GET(request: NextRequest, { params }: any) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function PUT(request: NextRequest, { params }: any) {
   const { id } = params;
 
   const validationResult = userCredentialsSchema.safeParse(
-    await request.json()
+    await request.json(),
   );
 
   if (!validationResult.success) {
@@ -53,14 +55,16 @@ export async function PUT(request: NextRequest, { params }: any) {
       $set: {
         validationResult,
       },
-    }
+    },
   );
 
   try {
-    db?.collection("users").findOneAndUpdate(
-      { _id: new ObjectId(id) },
-      { $set: validationResult.data }
-    );
+    db
+      ?.collection("users")
+      .findOneAndUpdate(
+        { _id: new ObjectId(id) },
+        { $set: validationResult.data },
+      );
     return NextResponse.json({ message: "Fields updated" }, { status: 200 });
   } catch (error) {
     return NextResponse.json(error);

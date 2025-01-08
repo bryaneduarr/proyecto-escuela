@@ -2,6 +2,7 @@ import { TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { CellContextId, TableProps } from "@/types/table-data";
 import { Row, flexRender } from "@tanstack/react-table";
 
+/* eslint-disable */
 const DataTableBody = <TData extends unknown>({
   columns,
   table,

@@ -8,14 +8,16 @@ export const DeleteApiHanlder = ({
   userString: string;
 }) => {
   const removeUser = async () => {
-    const confirmation = confirm(`Esta seguro que quiere eliminar este ${userString}?`);
+    const confirmation = confirm(
+      `Esta seguro que quiere eliminar este ${userString}?`,
+    );
     if (confirmation) {
       await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/${userString}s?_id=${_id}`,
         {
           method: "DELETE",
           headers: { "Content-type": "application/json" },
-        }
+        },
       )
         .then((response) => {
           response.json();

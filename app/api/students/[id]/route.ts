@@ -13,7 +13,7 @@ export async function PUT(request: NextRequest, { params }: ApiPut<Student>) {
   const { id } = params;
 
   const validationStudentSchema = newStudentValuesSchema.safeParse(
-    await request.json()
+    await request.json(),
   );
 
   if (!validationStudentSchema.success) {
@@ -25,10 +25,12 @@ export async function PUT(request: NextRequest, { params }: ApiPut<Student>) {
   const db = await connectToDataBase();
 
   try {
-    db?.collection("students").findOneAndUpdate(
-      { _id: new ObjectId(id) },
-      { $set: validationStudentSchema.data }
-    );
+    db
+      ?.collection("students")
+      .findOneAndUpdate(
+        { _id: new ObjectId(id) },
+        { $set: validationStudentSchema.data },
+      );
     return NextResponse.json({ message: "Fields updated" }, { status: 200 });
   } catch (error) {
     return NextResponse.json(error);
@@ -39,6 +41,7 @@ export async function PUT(request: NextRequest, { params }: ApiPut<Student>) {
  *  la base de datos del alumno que tenga el mismo ID.
  */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function GET(request: NextRequest, { params }: any) {
   try {
     const { id } = params;

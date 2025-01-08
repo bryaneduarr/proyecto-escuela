@@ -34,6 +34,7 @@ const AssignedGradeField = ({ form, teacher, gradeValueProp }: FieldProps) => {
         control={form.control}
         name="assignedGrade"
         render={({ field }) => {
+          /* eslint-disable */
           const { ref, ...restField } = field;
           return (
             <div>

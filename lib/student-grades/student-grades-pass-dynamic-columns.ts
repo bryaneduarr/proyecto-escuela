@@ -1,7 +1,7 @@
 import { columns } from "@/components/columns-table/columns-teacher-user";
 import { useMemo } from "react";
 
-/** Esta funcion lo que hace es utilizar el hook de useMemo para poder pasar el decodedClassSubject que 
+/** Esta funcion lo que hace es utilizar el hook de useMemo para poder pasar el decodedClassSubject que
  *  es un string manejable para uilitzarlo en las columnas de la tabla de las notas del estudiante.
  */
 
@@ -19,7 +19,7 @@ const StudentGradesPassDynamicColumns = ({
         .split(" ")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(""),
-      decodedClassSubject
+      decodedClassSubject,
     );
   }, [classSubject, decodedClassSubject]);
 

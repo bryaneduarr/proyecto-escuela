@@ -24,7 +24,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   const validationTeachersSchema = teachersSchema.safeParse(
-    await request.json()
+    await request.json(),
   );
 
   if (!validationTeachersSchema.success) {
@@ -59,7 +59,7 @@ export async function DELETE(request: NextRequest) {
       {
         message: "Teacher deleted",
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     return NextResponse.json({ message: error }, { status: 400 });

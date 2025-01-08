@@ -7,11 +7,12 @@ import connectToDataBase from "@/lib/mongodb";
  *  y la validamos usando el esquema de "Zod" para verificar que todo este correcto en la base de datos.
  */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function PUT(request: NextRequest, { params }: any) {
   const { id } = params;
 
   const validationTeacherSchema = teachersSchema.safeParse(
-    await request.json()
+    await request.json(),
   );
 
   if (!validationTeacherSchema.success) {
@@ -28,14 +29,16 @@ export async function PUT(request: NextRequest, { params }: any) {
       $set: {
         validationTeacherSchema,
       },
-    }
+    },
   );
 
   try {
-    db?.collection("teachers").findOneAndUpdate(
-      { _id: new ObjectId(id) },
-      { $set: validationTeacherSchema.data }
-    );
+    db
+      ?.collection("teachers")
+      .findOneAndUpdate(
+        { _id: new ObjectId(id) },
+        { $set: validationTeacherSchema.data },
+      );
     return NextResponse.json({ message: "Fields updated" }, { status: 200 });
   } catch (error) {
     return NextResponse.json(error);
@@ -46,6 +49,7 @@ export async function PUT(request: NextRequest, { params }: any) {
  *  la base de datos del alumno que tenga el mismo ID.
  */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function GET(request: NextRequest, { params }: any) {
   const { id } = params;
 

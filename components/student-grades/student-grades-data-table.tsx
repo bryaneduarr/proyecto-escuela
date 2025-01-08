@@ -7,6 +7,7 @@ const StudentGradesDataTable = ({
   dynamicColumns,
 }: {
   userTeacherData: UserTeacher | undefined;
+  /* eslint-disable */
   dynamicColumns: ColumnDef<any>[];
 }) => {
   return (

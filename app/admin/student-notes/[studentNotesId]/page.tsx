@@ -13,7 +13,7 @@ const StudentNotes = ({ params }: CellContextId<Student>) => {
 
   useEffect(() => {
     GetMethodStudentNotesById(params.studentNotesId, "student-note").then(
-      (students) => setStudent(students)
+      (students) => setStudent(students),
     );
   }, [params.studentNotesId]);
 

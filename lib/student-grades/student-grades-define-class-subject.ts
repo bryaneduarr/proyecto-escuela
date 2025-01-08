@@ -21,7 +21,8 @@ const StudentGradesDefineClassSubject = ({
         params.teacherClassName
           .split("-")
           .map(
-            (word: string) => word.charAt(0).toLocaleLowerCase() + word.slice(1)
+            (word: string) =>
+              word.charAt(0).toLocaleLowerCase() + word.slice(1),
           )
           .join("")
       ) {

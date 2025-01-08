@@ -4,20 +4,21 @@ import { UserTeacher } from "@/types/users";
 import { useSession } from "next-auth/react";
 
 /**
-* Esta función trae datos del usuario del maestro que tenga relacionada la materia de la clase  del archivo.
-* @param - La función `StudentGradesSubjectAndData` toma un parámetro `params` de tipo
-* `CellContextId<UsuarioProfesor>`. Este parámetro se utiliza para extraer la propiedad `teacherClassName` de
-* `params` y decodificarlo a un string manejable para obtener el `decodedClassSubject`. 
-* @returns La función `StudentGradesSubjectAndData` devuelve un objeto con dos propiedades:
-* `decodedClassSubject` y `userTeacherData`. La propiedad `decodedClassSubject` contiene la clase
-*  nombre del sujeto después de alguna manipulación de cadenas, y la propiedad `userTeacherData` contiene datos
-*  recuperado usando la función `GetUserTeacherData` con el asunto de la clase decodificado y los datos de la sesión.
+ * Esta función trae datos del usuario del maestro que tenga relacionada la materia de la clase  del archivo.
+ * @param - La función `StudentGradesSubjectAndData` toma un parámetro `params` de tipo
+ * `CellContextId<UsuarioProfesor>`. Este parámetro se utiliza para extraer la propiedad `teacherClassName` de
+ * `params` y decodificarlo a un string manejable para obtener el `decodedClassSubject`.
+ * @returns La función `StudentGradesSubjectAndData` devuelve un objeto con dos propiedades:
+ * `decodedClassSubject` y `userTeacherData`. La propiedad `decodedClassSubject` contiene la clase
+ *  nombre del sujeto después de alguna manipulación de cadenas, y la propiedad `userTeacherData` contiene datos
+ *  recuperado usando la función `GetUserTeacherData` con el asunto de la clase decodificado y los datos de la sesión.
  */
 const StudentGradesSubjectAndData = ({
   params,
 }: {
   params: CellContextId<UserTeacher>;
 }) => {
+  /* eslint-disable */
   const { data: session }: any = useSession();
 
   const decodedClassSubject = params.teacherClassName

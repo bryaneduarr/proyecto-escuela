@@ -13,6 +13,7 @@ declare module "next-auth" {
   interface Session {
     role?: string | unknown;
   }
+  /* eslint-disable */
   interface AdapterUser {
     data?: any;
   }

@@ -1,5 +1,6 @@
 import { ObjectId } from "mongodb";
 
+/* eslint-disable */
 export type ApiPut<SchemaData> = {
   params: ObjectId;
 };

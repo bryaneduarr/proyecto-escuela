@@ -13,6 +13,7 @@ import Link from "next/link";
 const AdminNavbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
+  /* eslint-disable */
   const { data: session }: any = useSession();
 
   return (

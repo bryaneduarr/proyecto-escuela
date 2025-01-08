@@ -10,7 +10,7 @@ import connectToDataBase from "@/lib/mongodb";
 
 export async function POST(request: NextRequest) {
   const validationUsersCredentialsSchema = userCredentialsSchema.safeParse(
-    await request.json()
+    await request.json(),
   );
 
   if (!validationUsersCredentialsSchema.success) {
@@ -41,6 +41,7 @@ export async function GET() {
       .toArray();
 
     return NextResponse.json({ users: JSON.parse(JSON.stringify(data)) });
+    /* eslint-disable */
   } catch (error) {
     return NextResponse.json({ error: "error" }, { status: 400 });
   }
@@ -62,7 +63,7 @@ export async function DELETE(request: NextRequest) {
       {
         message: "User deleted",
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     return NextResponse.json({ message: error }, { status: 400 });

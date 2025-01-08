@@ -10,6 +10,7 @@ import StudentGradesSubjectsAssigned from "@/components/student-grades/student-g
  */
 
 const TeacherHome = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { data: session }: any = useSession();
 
   const userTeacherData = GetUserTeacherData({

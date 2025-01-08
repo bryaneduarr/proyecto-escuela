@@ -19,7 +19,7 @@ export function Spinner({
     <span
       className={cn(
         "flex flex-col items-center justify-center",
-        !show && "hidden"
+        !show && "hidden",
       )}
     >
       <Loader2
@@ -28,7 +28,7 @@ export function Spinner({
           size === "small" && "h-6 w-6",
           size === "medium" && "h-8 w-8",
           size === "large" && "h-12 w-12",
-          className
+          className,
         )}
       />
       {children}

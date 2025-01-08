@@ -7,6 +7,7 @@ import {
   ColumnFiltersState,
   getFilteredRowModel,
   VisibilityState,
+  /* eslint-disable */
   ColumnDef,
 } from "@tanstack/react-table";
 import { DataTableProps } from "@/types/table-data";
@@ -17,12 +18,9 @@ const DataTableConfig = <TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) => {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] =useState<ColumnFiltersState>(
-    []
-  );
-  const [columnVisibility, setColumnVisibility] =
-   useState<VisibilityState>({});
-  const [rowSelection, setRowSelection] =useState({});
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
     data,

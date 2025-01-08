@@ -3,7 +3,7 @@ import { UserLogin } from "@/types/users";
 import { Session } from "next-auth";
 import { signIn } from "next-auth/react";
 
-/** Esta funcion podriamos decir que es la que ejecuta el onSubmit del Login ya que aqui dependiendo de que rol 
+/** Esta funcion podriamos decir que es la que ejecuta el onSubmit del Login ya que aqui dependiendo de que rol
  *  sea esta te redirigira a la pagina que se le haya dicho dependiendo el rol nuevamente.
  */
 

@@ -3,7 +3,7 @@ import { StudentGradesSchema } from "../models/students";
 import { UserStudentTeacher } from "@/types/users";
 import { CellContextId } from "@/types/table-data";
 
-/** Esta funcion simplemente pone los datos recogidos de las notas en el formulario para ponerlas en 
+/** Esta funcion simplemente pone los datos recogidos de las notas en el formulario para ponerlas en
  *  la tabla de estudiantes al campo que contiene las notas del estudiante.
  */
 

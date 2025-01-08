@@ -17,7 +17,7 @@ export const newSchemaValuesForStudent = (
 ) => {
   const age = Math.floor(
     (new Date().getTime() - new Date(values.age.dateOfBirth).getTime()) /
-      (1000 * 60 * 60 * 24 * 365)
+      (1000 * 60 * 60 * 24 * 365),
   );
 
   const defaultGrades = {
@@ -29,6 +29,7 @@ export const newSchemaValuesForStudent = (
 
   const studentGrades: StudentGrades =
     apiStudentGrades ||
+    /* eslint-disable */
     classNames.reduce<StudentGrades>((previousValue: any, currentClassName) => {
       previousValue[currentClassName] = { ...defaultGrades };
       return previousValue;

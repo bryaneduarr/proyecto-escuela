@@ -7,7 +7,7 @@ import StudentGradesSubjectsTable from "@/components/student-grades/student-grad
 import StudentGradesSubjectAndData from "@/lib/student-grades/student-grades-decoded-subject-and-data";
 
 /** Esta pagina es para visualizar la tabla de las notas del estudiante aqui solo usamos el estado de
- *  classSubject para decir que clase vamos a estar utilizando y asi la tabla pueda saber que notas 
+ *  classSubject para decir que clase vamos a estar utilizando y asi la tabla pueda saber que notas
  *  dependiendo la clase renderizar
  */
 

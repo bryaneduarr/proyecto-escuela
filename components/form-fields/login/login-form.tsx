@@ -22,7 +22,7 @@ const LoginForm = ({
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(
-            onSubmit as SubmitHandler<UserCredentials>
+            onSubmit as SubmitHandler<UserCredentials>,
           )}
           className="space-y-6"
         >

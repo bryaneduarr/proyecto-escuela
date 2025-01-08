@@ -21,7 +21,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   } else if (token?.role === "user" && path.startsWith("/admin")) {
     return NextResponse.redirect(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/teacher`
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/teacher`,
     );
   } else if (token?.role === "admin" && path.startsWith("/teacher")) {
     return NextResponse.redirect(`${process.env.NEXT_PUBLIC_SERVER_URL}/admin`);

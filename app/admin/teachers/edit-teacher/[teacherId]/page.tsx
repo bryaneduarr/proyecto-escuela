@@ -22,7 +22,7 @@ const EditTeacher = ({ params }: CellContextId<Teacher>) => {
 
   useEffect(() => {
     GetMethodById(params.teacherId, "teacher").then((teacher) =>
-      setTeacher(teacher)
+      setTeacher(teacher),
     );
   }, [params.teacherId]);
 

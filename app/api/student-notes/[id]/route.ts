@@ -7,6 +7,7 @@ import connectToDataBase from "@/lib/mongodb";
  *  notas y ID.
  */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function GET(request: NextRequest, { params }: any) {
   try {
     const { id } = params;
@@ -22,7 +23,7 @@ export async function GET(request: NextRequest, { params }: any) {
           grade: 1,
           studentGrades: 1,
         },
-      }
+      },
     );
 
     return NextResponse.json({

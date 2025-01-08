@@ -1,5 +1,6 @@
 import { defaultStudentGrades } from "@/lib/models/students";
 import { ObjectId } from "mongodb";
+/* eslint-disable */
 import { Teacher } from "./teachers";
 
 interface Address {

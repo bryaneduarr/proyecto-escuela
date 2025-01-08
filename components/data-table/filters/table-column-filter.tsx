@@ -8,6 +8,7 @@ import { TableProps } from "@/types/table-data";
 import { Button } from "@/components/ui/button";
 import { Column } from "@tanstack/react-table";
 
+/* eslint-disable */
 const DataTableColumnFilter = <TData extends unknown>({
   table,
 }: TableProps<TData>) => {

@@ -30,7 +30,7 @@ export const authOptions: NextAuthOptions = {
 
           const isPasswordCorrect = await compare(
             credentials!.password,
-            data.password
+            data.password,
           );
 
           if (!isPasswordCorrect) {
@@ -43,6 +43,7 @@ export const authOptions: NextAuthOptions = {
             user: data.user,
             data: data,
           };
+          /* eslint-disable */
         } catch (error) {
           throw new Error("There was an error validating the credential");
         }

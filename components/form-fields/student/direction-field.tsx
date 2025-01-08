@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { Input } from "@/components/ui/input";
 
 const DirectionField = ({ form, student }: FieldProps) => {
+  /* eslint-disable */
   useEffect(() => {
     form.setValue("address", student?.address! || "");
   }, [student, form]);

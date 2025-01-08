@@ -1,6 +1,7 @@
 import { StudentGradesSchema } from "../models/students";
 import { ObjectId } from "mongodb";
 
+/* eslint-disable */
 export const putApiHandlerStudentGrades = async <T>({
   setResponseStatus,
   subjectClass,
@@ -20,7 +21,7 @@ export const putApiHandlerStudentGrades = async <T>({
       method: "PUT",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(values),
-    }
+    },
   )
     .then((response) => {
       response.json();

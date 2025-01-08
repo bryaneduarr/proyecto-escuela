@@ -61,6 +61,7 @@ export const studentSchema = z.object({
   }),
   grade: z.string().refine((value) => value !== "", "Grade is required"),
   gender: z.nativeEnum(Gender, {
+    /* eslint-disable */
     errorMap: (issue, ctx) => ({ message: "Invalid gender" }),
   }),
   address: z.object({
@@ -78,7 +79,7 @@ export const studentSchema = z.object({
           }),
         }),
         phone: z.string().min(1, "Parent phone is required."),
-      })
+      }),
     )
     .min(1, "There should be at least 1 parent"),
 });

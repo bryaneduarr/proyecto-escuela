@@ -34,6 +34,7 @@ export type PhoneInputValue = PhoneInput.Value;
 
 const PhoneInputComponent = ({
   className,
+  /* eslint-disable */
   children,
   ...props
 }: PhoneInputProps) => (
@@ -56,7 +57,7 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputProps>(
       {...props}
       ref={ref}
     />
-  )
+  ),
 );
 
 InputComponent.displayName = "InputComponent";
@@ -71,7 +72,7 @@ const CountrySelect = ({
     (country: PhoneInput.Country) => {
       onChange(country);
     },
-    [onChange]
+    [onChange],
   );
 
   return (

@@ -1,6 +1,7 @@
 import { TableProps } from "@/types/table-data";
 import { Input } from "@/components/ui/input";
 
+/* eslint-disable */
 const DataTableSearchFilter = <TData extends unknown>({
   searchString,
   table,

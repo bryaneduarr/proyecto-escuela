@@ -9,7 +9,7 @@ import connectToDataBase from "@/lib/mongodb";
 
 export async function POST(request: NextRequest) {
   const validationStudentSchema = newStudentValuesSchema.safeParse(
-    await request.json()
+    await request.json(),
   );
 
   if (!validationStudentSchema.success) {
@@ -59,7 +59,7 @@ export async function DELETE(request: NextRequest) {
       {
         message: "Student deleted",
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     return NextResponse.json({ message: error }, { status: 400 });

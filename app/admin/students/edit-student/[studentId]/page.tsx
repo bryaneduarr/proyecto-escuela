@@ -24,7 +24,7 @@ const EditStudent = ({ params }: CellContextId<Student>) => {
 
   useEffect(() => {
     GetMethodById(params.studentId, "student").then((students) =>
-      setStudent(students)
+      setStudent(students),
     );
   }, [params.studentId]);
 

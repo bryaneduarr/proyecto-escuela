@@ -31,11 +31,12 @@ const StudentGradesSubjectCardGrades = ({
           <SelectLabel>Clases</SelectLabel>
           <div>
             {Object.entries(student?.studentGrades || {}).map(
+              /* eslint-disable */
               ([subject, grades], index) => (
                 <SelectItem key={index} value={subject}>
                   {subject.split(/(?=[A-Z])/).join(" ")}
                 </SelectItem>
-              )
+              ),
             )}
           </div>
         </SelectGroup>

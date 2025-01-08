@@ -21,7 +21,7 @@ const ParentField = ({ form, student }: FieldProps) => {
         name: string;
         relationship: parentRelation;
         phone: string;
-      }[]
+      }[],
     );
   }, [student, form]);
 

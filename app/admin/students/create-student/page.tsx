@@ -15,7 +15,7 @@ import Link from "next/link";
 
 const CreateStudentsForm = () => {
   const [responseStatus, setResponseStatus] = useState<boolean | undefined>(
-    undefined
+    undefined,
   );
 
   const form = FormResolver<OriginalStudentSchema>(studentSchema);

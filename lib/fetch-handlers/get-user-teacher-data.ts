@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { UserTeacher } from "@/types/users";
 
+/* eslint-disable */
 interface UserTeacherDataProps {
   session?: any;
   user?: any;
@@ -20,11 +21,9 @@ export const GetUserTeacherData = ({
       if (session?.user.user) {
         try {
           const response = await fetch(
-            `${
-              process.env.NEXT_PUBLIC_SERVER_URL
-            }/api/student-grades?userRef=${
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/student-grades?userRef=${
               session!.user.user
-            }&subjectClasses=${subjects}`
+            }&subjectClasses=${subjects}`,
           );
 
           const data = await response.json();

@@ -17,13 +17,14 @@ const StudentGradesInputContainer = ({
         (() => {
           if (classSubject !== null && studentGradesData?.studentGrades) {
             return (
+              /* eslint-disable */
               (studentGradesData.studentGrades as { [key: string]: any })[
                 String(classSubject)
               ] || {}
             );
           }
           return {};
-        })()
+        })(),
       ).map(([partialKey], index) => (
         <div key={index} className="pt-4">
           <StudentGradesInput

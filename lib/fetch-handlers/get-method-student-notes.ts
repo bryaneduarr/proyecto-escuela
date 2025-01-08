@@ -7,7 +7,7 @@ const GetMethodStudentNotes = (userString: string) => {
     async function fetchData() {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/${userString}s`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/${userString}s`,
         );
 
         const data = await response.json();

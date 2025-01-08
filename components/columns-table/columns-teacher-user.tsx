@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export const columns = (
   subject: string,
-  decodedclassSubject: string
+  decodedclassSubject: string,
 ): ColumnDef<UserStudentTeacher>[] => [
   {
     id: "actions",

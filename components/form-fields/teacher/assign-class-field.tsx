@@ -40,12 +40,13 @@ const AssignClassField = ({
     form.setValue("assignClass", []);
   }, [gradeValue, form]);
 
+  /* eslint-disable */
   gradeValue =
     gradeValue?.length! > 0
       ? gradeValue
       : storedGrade?.length! > 0
-      ? (gradeValue = storedGrade)
-      : (gradeValue = "");
+        ? (gradeValue = storedGrade)
+        : (gradeValue = "");
 
   const teachers = GetMethod("teacher");
 
@@ -55,7 +56,7 @@ const AssignClassField = ({
         return (
           teacher.assignedGrade === gradeValue &&
           teacher.assignClass.some(
-            (assignedClass) => assignedClass.value === classOption.value
+            (assignedClass) => assignedClass.value === classOption.value,
           ) &&
           teacher._id !== currentTeacher
         );

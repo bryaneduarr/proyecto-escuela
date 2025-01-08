@@ -18,7 +18,8 @@ const StudentGradesSubjectCardSubjectGrades = ({
           </CardTitle>
           <div className="flex flex-col gap-2">
             {Object.entries(
-              (student?.studentGrades as any)[selectedSubject] || {}
+              /* eslint-disable */
+              (student?.studentGrades as any)[selectedSubject] || {},
             ).map(([partial, grade], index) => {
               const separatedPartial = partial.replace(
                 /([a-zA-Z]+)(\d+)/,
@@ -27,7 +28,7 @@ const StudentGradesSubjectCardSubjectGrades = ({
                     partialString.charAt(0).toUpperCase() +
                     partialString.slice(1)
                   } ${partialNumber}`;
-                }
+                },
               );
 
               return (

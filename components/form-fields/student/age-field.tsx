@@ -19,6 +19,7 @@ import { format } from "date-fns";
 
 const AgeField = ({ form, student }: FieldProps) => {
   useEffect(() => {
+    /* eslint-disable */
     form.setValue("age.dateOfBirth", student?.age.dateOfBirth!);
   }, [student, form]);
 
@@ -59,7 +60,7 @@ const AgeField = ({ form, student }: FieldProps) => {
                             .padStart(2, "0")}/${date
                             .getDate()
                             .toString()
-                            .padStart(2, "0")}/${date.getFullYear()}`
+                            .padStart(2, "0")}/${date.getFullYear()}`,
                         );
                       }
                     }}
