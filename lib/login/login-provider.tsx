@@ -6,7 +6,7 @@
 
 import { SessionProvider } from "next-auth/react";
 
-/* eslint-disable */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const AuthProvider = ({ children }: any) => {
   return <SessionProvider>{children}</SessionProvider>;
 };

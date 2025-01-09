@@ -1,8 +1,7 @@
 import { StudentGradesSchema } from "../models/students";
 import { ObjectId } from "mongodb";
 
-/* eslint-disable */
-export const putApiHandlerStudentGrades = async <T>({
+export const putApiHandlerStudentGrades = async ({
   setResponseStatus,
   subjectClass,
   userString,

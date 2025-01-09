@@ -18,7 +18,7 @@ const StudentGradesSubjectAndData = ({
 }: {
   params: CellContextId<UserTeacher>;
 }) => {
-  /* eslint-disable */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { data: session }: any = useSession();
 
   const decodedClassSubject = params.teacherClassName

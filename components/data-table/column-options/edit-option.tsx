@@ -3,8 +3,7 @@ import { CellContextId } from "@/types/table-data";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
-/* eslint-disable */
-const OptionsEditColumn = <T extends Object>({
+const OptionsEditColumn = <T extends object>({
   academicUsersId,
   userString,
 }: CellContextId<T> & { userString: string }) => {

@@ -29,7 +29,7 @@ export const newSchemaValuesForStudent = (
 
   const studentGrades: StudentGrades =
     apiStudentGrades ||
-    /* eslint-disable */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     classNames.reduce<StudentGrades>((previousValue: any, currentClassName) => {
       previousValue[currentClassName] = { ...defaultGrades };
       return previousValue;

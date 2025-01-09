@@ -43,9 +43,10 @@ export const authOptions: NextAuthOptions = {
             user: data.user,
             data: data,
           };
-          /* eslint-disable */
         } catch (error) {
-          throw new Error("There was an error validating the credential");
+          throw new Error(
+            `There was an error validating the credential. ${error}`,
+          );
         }
       },
     }),

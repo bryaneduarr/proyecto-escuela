@@ -17,8 +17,7 @@ export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
 function Calendar({
   className,
-  /* eslint-disable */
-  classNames,
+  // classNames,
   showOutsideDays = true,
   ...props
 }: CalendarProps & { onChange?: React.ChangeEventHandler<HTMLSelectElement> }) {
@@ -85,8 +84,14 @@ function Calendar({
         day_hidden: "invisible",
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeftIcon className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRightIcon className="h-4 w-4" />,
+        IconLeft: () => (
+          // { ...props }
+          <ChevronLeftIcon className="h-4 w-4" />
+        ),
+        IconRight: () => (
+          // { ...props }
+          <ChevronRightIcon className="h-4 w-4" />
+        ),
         Dropdown: ({ ...props }) => (
           <Select
             {...props}
@@ -95,6 +100,7 @@ function Calendar({
                 handleCalendarChange(value, props.onChange);
               }
             }}
+            // eslint-disable-next-line react/prop-types
             value={props.value as string}
           >
             <SelectTrigger
@@ -103,7 +109,9 @@ function Calendar({
                 "pl-2 pr-1 py-2 h-7 w-fit font-medium [.is-between_&]:hidden [.is-end_&]:hidden [.is-start.is-end_&]:flex",
               )}
             >
+              {/* eslint-disable-next-line react/prop-types */}
               <SelectValue placeholder={props?.caption}>
+                {/* eslint-disable-next-line react/prop-types */}
                 {props?.caption}
               </SelectValue>
             </SelectTrigger>
@@ -111,9 +119,11 @@ function Calendar({
               {props.children &&
                 React.Children.map(props.children, (child) => (
                   <SelectItem
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     value={(child as React.ReactElement<any>)?.props?.value}
                     className="min-w-[var(--radix-popper-anchor-width)]"
                   >
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {(child as React.ReactElement<any>)?.props?.children}
                   </SelectItem>
                 ))}

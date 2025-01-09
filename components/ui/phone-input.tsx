@@ -34,8 +34,7 @@ export type PhoneInputValue = PhoneInput.Value;
 
 const PhoneInputComponent = ({
   className,
-  /* eslint-disable */
-  children,
+  // children,
   ...props
 }: PhoneInputProps) => (
   <PhoneInput.default

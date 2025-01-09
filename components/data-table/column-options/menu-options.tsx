@@ -11,8 +11,7 @@ import { Button } from "@/components/ui/button";
 import OptionsDeleteColumn from "@/components/data-table/column-options/delete-option";
 import OptionsEditColumn from "@/components/data-table/column-options/edit-option";
 
-/* eslint-disable */
-const MenuOptions = <T extends Object>({
+const MenuOptions = <T extends object>({
   academicUsersId,
   userString,
 }: CellContextId<T>) => {

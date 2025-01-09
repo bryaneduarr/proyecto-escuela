@@ -18,7 +18,7 @@ const StudentGradesSubjectCardSubjectGrades = ({
           </CardTitle>
           <div className="flex flex-col gap-2">
             {Object.entries(
-              /* eslint-disable */
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               (student?.studentGrades as any)[selectedSubject] || {},
             ).map(([partial, grade], index) => {
               const separatedPartial = partial.replace(

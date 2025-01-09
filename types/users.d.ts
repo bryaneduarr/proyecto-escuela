@@ -13,11 +13,12 @@ declare module "next-auth" {
   interface Session {
     role?: string | unknown;
   }
-  /* eslint-disable */
   interface AdapterUser {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data?: any;
   }
   interface User {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data?: any;
   }
 }

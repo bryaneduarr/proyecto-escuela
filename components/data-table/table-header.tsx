@@ -2,10 +2,7 @@ import { TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Header, HeaderGroup, flexRender } from "@tanstack/react-table";
 import { TableProps } from "@/types/table-data";
 
-/* eslint-disable */
-const DataTableHeader = <TData extends unknown>({
-  table,
-}: TableProps<TData>) => {
+const DataTableHeader = <TData,>({ table }: TableProps<TData>) => {
   return (
     <TableHeader>
       {table.getHeaderGroups().map((headerGroup: HeaderGroup<TData>) => (

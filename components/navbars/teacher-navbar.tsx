@@ -10,7 +10,7 @@ import { Home, User } from "lucide-react";
 import Link from "next/link";
 
 const TeacherNavbar = () => {
-  /* eslint-disable */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { data: session }: any = useSession();
 
   return (

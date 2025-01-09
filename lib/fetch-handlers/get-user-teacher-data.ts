@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { UserTeacher } from "@/types/users";
 
-/* eslint-disable */
 interface UserTeacherDataProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   session?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   user?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   classSubjects?: any;
 }
 
@@ -30,7 +32,7 @@ export const GetUserTeacherData = ({
 
           return setUserTeacherData(await data);
         } catch (error) {
-          console.log("Error on fetching data.");
+          console.log(`Error on fetching data. ${error}`);
         }
       }
     };

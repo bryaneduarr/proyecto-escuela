@@ -21,7 +21,7 @@ export interface TableProps<TData> {
   userString?: string;
   data?: TData[];
   _id?: string;
-  /* eslint-disable */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getMethod?: any;
   searchString?: string;
 }

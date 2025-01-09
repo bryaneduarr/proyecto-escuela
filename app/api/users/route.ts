@@ -41,9 +41,8 @@ export async function GET() {
       .toArray();
 
     return NextResponse.json({ users: JSON.parse(JSON.stringify(data)) });
-    /* eslint-disable */
   } catch (error) {
-    return NextResponse.json({ error: "error" }, { status: 400 });
+    return NextResponse.json({ error: `error: ${error}` }, { status: 400 });
   }
 }
 

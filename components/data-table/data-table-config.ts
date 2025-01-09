@@ -7,8 +7,6 @@ import {
   ColumnFiltersState,
   getFilteredRowModel,
   VisibilityState,
-  /* eslint-disable */
-  ColumnDef,
 } from "@tanstack/react-table";
 import { DataTableProps } from "@/types/table-data";
 import { useState } from "react";

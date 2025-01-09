@@ -22,4 +22,20 @@ export default [
       },
     },
   },
+  {
+    ignores: [
+      "**/node_modules/**",
+      "**/.next/**",
+      ".env",
+      "**/dist/**",
+      "**/build/**",
+      "next-env.d.ts",
+    ],
+  },
+  {
+    parserOptions: {
+      ecmaVersion: 2020,
+      sourceType: "module",
+    },
+  },
 ];

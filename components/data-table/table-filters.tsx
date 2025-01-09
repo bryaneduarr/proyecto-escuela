@@ -2,8 +2,7 @@ import { TableProps } from "@/types/table-data";
 import DataTableSearchFilter from "./filters/table-search-filter";
 import DataTableColumnFilter from "./filters/table-column-filter";
 
-/* eslint-disable */
-const DataTableFilters = <TData extends unknown>({
+const DataTableFilters = <TData,>({
   searchString,
   table,
 }: TableProps<TData>) => {

@@ -61,7 +61,7 @@ export const studentSchema = z.object({
   }),
   grade: z.string().refine((value) => value !== "", "Grade is required"),
   gender: z.nativeEnum(Gender, {
-    /* eslint-disable */
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     errorMap: (issue, ctx) => ({ message: "Invalid gender" }),
   }),
   address: z.object({
@@ -74,6 +74,7 @@ export const studentSchema = z.object({
       z.object({
         name: z.string().min(1, "Parent name is required."),
         relationship: z.nativeEnum(parentRelation, {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           errorMap: (issue, ctx) => ({
             message: "Parent relation is required.",
           }),

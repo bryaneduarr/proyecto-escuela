@@ -18,8 +18,10 @@ export async function GET() {
       },
       { status: 200 },
     );
-    /* eslint-disable */
   } catch (error) {
-    return NextResponse.json({ message: "Couldn't get data" }, { status: 400 });
+    return NextResponse.json(
+      { message: `Couldn't get data ${error}` },
+      { status: 400 },
+    );
   }
 }

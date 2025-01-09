@@ -17,7 +17,7 @@ const StudentGradesInputContainer = ({
         (() => {
           if (classSubject !== null && studentGradesData?.studentGrades) {
             return (
-              /* eslint-disable */
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               (studentGradesData.studentGrades as { [key: string]: any })[
                 String(classSubject)
               ] || {}
