@@ -20,7 +20,9 @@ function Calendar({
   // classNames,
   showOutsideDays = true,
   ...props
-}: CalendarProps & { onChange?: React.ChangeEventHandler<HTMLSelectElement> }) {
+}: CalendarProps & {
+  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+}) {
   const handleCalendarChange = (
     _value: string | number,
     _e: React.ChangeEventHandler<HTMLSelectElement>,
@@ -52,7 +54,9 @@ function Calendar({
           "hidden [.is-between_&]:flex [.is-end_&]:flex [.is-start.is-end_&]:hidden",
         nav: "flex items-center [&:has([name='previous-month'])]:order-first [&:has([name='next-month'])]:order-last gap-1",
         nav_button: cn(
-          buttonVariants({ variant: "outline" }),
+          buttonVariants({
+            variant: "outline",
+          }),
           "h-7 w-7 bg-transparent p-0 text-muted-foreground",
         ),
         nav_button_previous: "absolute left-1",
@@ -69,7 +73,9 @@ function Calendar({
             : "[&:has([aria-selected])]:rounded-md",
         ),
         day: cn(
-          buttonVariants({ variant: "ghost" }),
+          buttonVariants({
+            variant: "ghost",
+          }),
           "h-9 w-9 p-0 font-normal aria-selected:opacity-100",
         ),
         day_range_start: "day-range-start",
@@ -95,7 +101,8 @@ function Calendar({
         Dropdown: ({ ...props }) => (
           <Select
             {...props}
-            onValueChange={(value) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            onValueChange={(value: any) => {
               if (props.onChange) {
                 handleCalendarChange(value, props.onChange);
               }
@@ -105,7 +112,9 @@ function Calendar({
           >
             <SelectTrigger
               className={cn(
-                buttonVariants({ variant: "ghost" }),
+                buttonVariants({
+                  variant: "ghost",
+                }),
                 "pl-2 pr-1 py-2 h-7 w-fit font-medium [.is-between_&]:hidden [.is-end_&]:hidden [.is-start.is-end_&]:flex",
               )}
             >

@@ -7,7 +7,9 @@ const OptionsDeleteColumn = <T extends { _id: string }>({
   academicUsersId,
   deleteFunction,
   userString,
-}: CellContextId<T> & { deleteFunction: DeleteFunction<T> }) => {
+}: CellContextId<T> & {
+  deleteFunction: DeleteFunction<T>;
+}) => {
   const deleteOption = deleteFunction({
     _id: academicUsersId,
     userString: userString,

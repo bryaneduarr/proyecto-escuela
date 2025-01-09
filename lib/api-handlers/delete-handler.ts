@@ -16,7 +16,9 @@ export const DeleteApiHanlder = ({
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/${userString}s?_id=${_id}`,
         {
           method: "DELETE",
-          headers: { "Content-type": "application/json" },
+          headers: {
+            "Content-type": "application/json",
+          },
         },
       )
         .then((response) => {

@@ -6,7 +6,9 @@ import Link from "next/link";
 const OptionsEditColumn = <T extends object>({
   academicUsersId,
   userString,
-}: CellContextId<T> & { userString: string }) => {
+}: CellContextId<T> & {
+  userString: string;
+}) => {
   const id = academicUsersId;
 
   return (

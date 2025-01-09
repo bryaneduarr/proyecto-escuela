@@ -18,7 +18,9 @@ export const putApiHandlerStudentGrades = async ({
     `${process.env.NEXT_PUBLIC_SERVER_URL}/api/${userString}/${_id}?subjectClass=${subjectClass}`,
     {
       method: "PUT",
-      headers: { "Content-type": "application/json" },
+      headers: {
+        "Content-type": "application/json",
+      },
       body: JSON.stringify(values),
     },
   )

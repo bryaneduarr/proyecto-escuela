@@ -23,9 +23,9 @@ export async function GET(request: NextRequest) {
 
     const querySubject = querySubjectParameter?.split(",");
 
-    const teacherData = (await db
-      ?.collection("teachers")
-      .findOne({ userRef: querySessionParameter })) as Teacher;
+    const teacherData = (await db?.collection("teachers").findOne({
+      userRef: querySessionParameter,
+    })) as Teacher;
 
     if (!teacherData) {
       return NextResponse.redirect(
@@ -42,7 +42,11 @@ export async function GET(request: NextRequest) {
     const studentGrade = await db
       ?.collection("students")
       .aggregate([
-        { $match: { grade: assignedGrade } },
+        {
+          $match: {
+            grade: assignedGrade,
+          },
+        },
         {
           $project: {
             _id: 1,
@@ -50,9 +54,13 @@ export async function GET(request: NextRequest) {
             studentGrades: {
               $arrayToObject: {
                 $filter: {
-                  input: { $objectToArray: "$studentGrades" },
+                  input: {
+                    $objectToArray: "$studentGrades",
+                  },
                   as: "grade",
-                  cond: { $in: ["$$grade.k", querySubject] },
+                  cond: {
+                    $in: ["$$grade.k", querySubject],
+                  },
                 },
               },
             },
@@ -71,7 +79,9 @@ export async function GET(request: NextRequest) {
     );
   } catch (error) {
     return NextResponse.json(
-      { message: `Couldn't get data ${error}` },
+      {
+        message: `Couldn't get data ${error}`,
+      },
       { status: 400 },
     );
   }

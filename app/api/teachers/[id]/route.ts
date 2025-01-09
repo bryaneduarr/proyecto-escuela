@@ -33,12 +33,12 @@ export async function PUT(request: NextRequest, { params }: any) {
   );
 
   try {
-    db
-      ?.collection("teachers")
-      .findOneAndUpdate(
-        { _id: new ObjectId(id) },
-        { $set: validationTeacherSchema.data },
-      );
+    db?.collection("teachers").findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      {
+        $set: validationTeacherSchema.data,
+      },
+    );
     return NextResponse.json({ message: "Fields updated" }, { status: 200 });
   } catch (error) {
     return NextResponse.json(error);
@@ -73,6 +73,8 @@ export async function GET(request: NextRequest, { params }: any) {
       teachers: JSON.parse(JSON.stringify(validationResult.data)),
     });
   } catch (error) {
-    return NextResponse.json(error, { status: 400 });
+    return NextResponse.json(error, {
+      status: 400,
+    });
   }
 }

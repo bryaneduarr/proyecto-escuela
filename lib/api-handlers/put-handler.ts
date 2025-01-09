@@ -11,7 +11,9 @@ export const putApiHandler = async <T>({
 
   await fetch(`/api/${userString}s/${_id}`, {
     method: "PUT",
-    headers: { "Content-type": "application/json" },
+    headers: {
+      "Content-type": "application/json",
+    },
     body: JSON.stringify(newValues),
   })
     .then((response) => {

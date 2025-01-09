@@ -4,7 +4,9 @@ import { Inter } from "next/font/google";
 import AdminNavbar from "@/components/navbars/admin-navbar";
 import "@/app/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Admin school",

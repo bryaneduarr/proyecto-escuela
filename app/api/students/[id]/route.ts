@@ -25,12 +25,12 @@ export async function PUT(request: NextRequest, { params }: ApiPut<Student>) {
   const db = await connectToDataBase();
 
   try {
-    db
-      ?.collection("students")
-      .findOneAndUpdate(
-        { _id: new ObjectId(id) },
-        { $set: validationStudentSchema.data },
-      );
+    db?.collection("students").findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      {
+        $set: validationStudentSchema.data,
+      },
+    );
     return NextResponse.json({ message: "Fields updated" }, { status: 200 });
   } catch (error) {
     return NextResponse.json(error);
@@ -48,14 +48,16 @@ export async function GET(request: NextRequest, { params }: any) {
 
     const db = await connectToDataBase();
 
-    const data = await db
-      ?.collection("students")
-      .findOne({ _id: new ObjectId(id) });
+    const data = await db?.collection("students").findOne({
+      _id: new ObjectId(id),
+    });
 
     return NextResponse.json({
       students: JSON.parse(JSON.stringify(data)),
     });
   } catch (error) {
-    return NextResponse.json(error, { status: 400 });
+    return NextResponse.json(error, {
+      status: 400,
+    });
   }
 }

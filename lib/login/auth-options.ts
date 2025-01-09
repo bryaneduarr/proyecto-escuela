@@ -12,16 +12,22 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        user: { label: "User", type: "text" },
-        password: { label: "Password", type: "password" },
+        user: {
+          label: "User",
+          type: "text",
+        },
+        password: {
+          label: "Password",
+          type: "password",
+        },
       },
       async authorize(credentials) {
         const db = await connectToDataBase();
 
         try {
-          const data = await db
-            ?.collection("users")
-            .findOne({ user: credentials?.user });
+          const data = await db?.collection("users").findOne({
+            user: credentials?.user,
+          });
 
           if (!data) {
             db?.close();

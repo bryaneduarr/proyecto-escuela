@@ -51,7 +51,7 @@ const AgeField = ({ form, student }: FieldProps) => {
                     fromYear={1900}
                     toYear={2024}
                     selected={new Date(field.value)}
-                    captionLayout="dropdown-buttons"
+                    captionLayout="dropdown"
                     onSelect={(date) => {
                       if (date instanceof Date) {
                         field.onChange(

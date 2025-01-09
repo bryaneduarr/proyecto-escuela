@@ -11,7 +11,10 @@ export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
-  const table = DataTableConfig({ data, columns });
+  const table = DataTableConfig({
+    data,
+    columns,
+  });
 
   return (
     <div>

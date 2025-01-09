@@ -9,7 +9,16 @@ export async function GET() {
 
     const studentData = await db
       ?.collection("students")
-      .find({}, { projection: { name: 1, studentGrades: 1, _id: 1 } })
+      .find(
+        {},
+        {
+          projection: {
+            name: 1,
+            studentGrades: 1,
+            _id: 1,
+          },
+        },
+      )
       .toArray();
 
     return NextResponse.json(
@@ -20,7 +29,9 @@ export async function GET() {
     );
   } catch (error) {
     return NextResponse.json(
-      { message: `Couldn't get data ${error}` },
+      {
+        message: `Couldn't get data ${error}`,
+      },
       { status: 400 },
     );
   }

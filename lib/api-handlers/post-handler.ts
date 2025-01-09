@@ -10,7 +10,9 @@ export const postApiHandler = async <T>({
 
   await fetch(`/api/${userString}s`, {
     method: "POST",
-    headers: { "Content-type": "application/json" },
+    headers: {
+      "Content-type": "application/json",
+    },
     body: JSON.stringify(newValues),
   })
     .then((response) => {

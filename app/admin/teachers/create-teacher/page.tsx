@@ -20,7 +20,11 @@ const CreateTeacherForm = () => {
   const form = FormResolver<TeachersSchema>(teachersSchema);
 
   const onSubmit = async (values: TeachersSchema) => {
-    TeachersPostApiOnSubmit({ setResponseStatus, userNameField, values });
+    TeachersPostApiOnSubmit({
+      setResponseStatus,
+      userNameField,
+      values,
+    });
   };
 
   return (

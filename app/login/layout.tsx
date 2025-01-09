@@ -3,7 +3,9 @@ import { AuthProvider } from "@/lib/login/login-provider";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Teacher administration",

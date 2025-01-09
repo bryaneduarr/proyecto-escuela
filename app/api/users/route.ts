@@ -23,9 +23,14 @@ export async function POST(request: NextRequest) {
 
   try {
     db?.collection("users").insertOne(validationUsersCredentialsSchema.data);
-    return NextResponse.json({ message: "Data sent succesfully", status: 201 });
+    return NextResponse.json({
+      message: "Data sent succesfully",
+      status: 201,
+    });
   } catch (error) {
-    return NextResponse.json(error, { status: 400 });
+    return NextResponse.json(error, {
+      status: 400,
+    });
   }
 }
 
@@ -40,7 +45,9 @@ export async function GET() {
       .find<UserLogin>({}, { projection: { password: 0 } })
       .toArray();
 
-    return NextResponse.json({ users: JSON.parse(JSON.stringify(data)) });
+    return NextResponse.json({
+      users: JSON.parse(JSON.stringify(data)),
+    });
   } catch (error) {
     return NextResponse.json({ error: `error: ${error}` }, { status: 400 });
   }
@@ -56,7 +63,9 @@ export async function DELETE(request: NextRequest) {
   try {
     const id: string | null = request.nextUrl.searchParams.get("_id");
     const objectId: ObjectId | null = id ? new ObjectId(id) : null;
-    await db?.collection("users").findOneAndDelete({ _id: objectId?._id });
+    await db?.collection("users").findOneAndDelete({
+      _id: objectId?._id,
+    });
 
     return NextResponse.json(
       {

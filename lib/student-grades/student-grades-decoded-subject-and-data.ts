@@ -32,7 +32,10 @@ const StudentGradesSubjectAndData = ({
     classSubjects: [decodedClassSubject],
   });
 
-  return { decodedClassSubject, userTeacherData };
+  return {
+    decodedClassSubject,
+    userTeacherData,
+  };
 };
 
 export default StudentGradesSubjectAndData;

@@ -26,7 +26,11 @@ const TeachersPostApiOnSubmit = async ({
       password: "",
       role: "user",
     };
-    postApiHandler({ setResponseStatus, userString: "user", values });
+    postApiHandler({
+      setResponseStatus,
+      userString: "user",
+      values,
+    });
   };
 
   await submitCredentialField({

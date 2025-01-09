@@ -25,7 +25,11 @@ export async function GET(request: NextRequest, { params }: any) {
     const studentDataArray = await db
       ?.collection("students")
       .aggregate([
-        { $match: { _id: new ObjectId(id) } },
+        {
+          $match: {
+            _id: new ObjectId(id),
+          },
+        },
         {
           $project: {
             _id: 1,
@@ -33,9 +37,13 @@ export async function GET(request: NextRequest, { params }: any) {
             studentGrades: {
               $arrayToObject: {
                 $filter: {
-                  input: { $objectToArray: "$studentGrades" },
+                  input: {
+                    $objectToArray: "$studentGrades",
+                  },
                   as: "grade",
-                  cond: { $eq: ["$$grade.k", querySubjectParameter] },
+                  cond: {
+                    $eq: ["$$grade.k", querySubjectParameter],
+                  },
                 },
               },
             },
@@ -49,7 +57,9 @@ export async function GET(request: NextRequest, { params }: any) {
 
     return NextResponse.json(JSON.parse(JSON.stringify(studentData)));
   } catch (error) {
-    return NextResponse.json(error, { status: 400 });
+    return NextResponse.json(error, {
+      status: 400,
+    });
   }
 }
 
@@ -79,11 +89,12 @@ export async function PUT(request: NextRequest, { params }: ApiPut<Student>) {
     }
 
     const updateObjectSubject = {
-      [`studentGrades.${querySubjectParameter}`]:
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (validationStudentSchema.data.studentGrades as { [key: string]: any })[
-          String(querySubjectParameter)
-        ],
+      [`studentGrades.${querySubjectParameter}`]: (
+        validationStudentSchema.data.studentGrades as {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          [key: string]: any;
+        }
+      )[String(querySubjectParameter)],
     };
 
     db

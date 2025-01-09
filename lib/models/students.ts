@@ -62,7 +62,9 @@ export const studentSchema = z.object({
   grade: z.string().refine((value) => value !== "", "Grade is required"),
   gender: z.nativeEnum(Gender, {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    errorMap: (issue, ctx) => ({ message: "Invalid gender" }),
+    errorMap: (issue, ctx) => ({
+      message: "Invalid gender",
+    }),
   }),
   address: z.object({
     street: z.string().min(1, "Street is required."),

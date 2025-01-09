@@ -22,7 +22,12 @@ const EditUserFromId = ({ params }: CellContextId<UserLogin>) => {
   }, [params.userId]);
 
   const onSubmit = async (values: UserLogin) => {
-    UsersPutApiOnSubmit({ setResponseStatus, values, params, user });
+    UsersPutApiOnSubmit({
+      setResponseStatus,
+      values,
+      params,
+      user,
+    });
   };
 
   return (

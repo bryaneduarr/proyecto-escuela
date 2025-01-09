@@ -26,7 +26,10 @@ type CountrySelectProps = {
   options: CountrySelectOption[];
 };
 
-type CountrySelectOption = { label: string; value: PhoneInput.Country };
+type CountrySelectOption = {
+  label: string;
+  value: PhoneInput.Country;
+};
 
 type PhoneInputProps = React.ComponentProps<typeof PhoneInput.default>;
 

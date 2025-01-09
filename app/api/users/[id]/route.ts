@@ -10,11 +10,13 @@ export async function GET(request: NextRequest, { params }: any) {
   try {
     const db = await connectToDataBase();
 
-    const data = await db
-      ?.collection("users")
-      .findOne({ _id: new ObjectId(id) });
+    const data = await db?.collection("users").findOne({
+      _id: new ObjectId(id),
+    });
 
-    const safelyPassword = userCredentialsSchema.omit({ password: true });
+    const safelyPassword = userCredentialsSchema.omit({
+      password: true,
+    });
 
     const validationResult = safelyPassword.safeParse(data);
 
@@ -29,7 +31,9 @@ export async function GET(request: NextRequest, { params }: any) {
       users: JSON.parse(JSON.stringify(validationResult.data)),
     });
   } catch (error) {
-    return NextResponse.json(error, { status: 400 });
+    return NextResponse.json(error, {
+      status: 400,
+    });
   }
 }
 

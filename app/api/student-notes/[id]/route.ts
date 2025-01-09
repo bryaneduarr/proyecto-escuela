@@ -30,6 +30,8 @@ export async function GET(request: NextRequest, { params }: any) {
       students: JSON.parse(JSON.stringify(data)),
     });
   } catch (error) {
-    return NextResponse.json(error, { status: 400 });
+    return NextResponse.json(error, {
+      status: 400,
+    });
   }
 }

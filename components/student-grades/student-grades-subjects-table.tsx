@@ -24,7 +24,11 @@ const StudentGradesSubjectsTable = ({
     classSubject,
   });
 
-  StudentGradesDefineClassSubject({ setClassSubject, userTeacherData, params });
+  StudentGradesDefineClassSubject({
+    setClassSubject,
+    userTeacherData,
+    params,
+  });
 
   return (
     <>
