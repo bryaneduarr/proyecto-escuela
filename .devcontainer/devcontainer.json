@@ -1,0 +1,28 @@
+{
+	"name": "school-management",
+	"build": {
+		"dockerfile": "../Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bradlc.vscode-tailwindcss",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"ms-azuretools.vscode-docker",
+				"formulahendry.auto-rename-tag",
+				"dsznajder.es7-react-js-snippets"
+			]
+		}
+	},
+	"postCreateCommand": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash",
+	"portsAttributes": {
+		"8000": {
+			"label": "school-management",
+			"onAutoForward": "notify"
+		}
+	},
+	"forwardPorts": [
+		8000
+	]
+}
