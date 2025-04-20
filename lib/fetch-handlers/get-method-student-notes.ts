@@ -6,9 +6,7 @@ const GetMethodStudentNotes = (userString: string) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        console.log(`[GetMethodStudentNotes] Fetching: /api/${userString}s`);
         const response = await fetch(`/api/${userString}s`);
-        console.log(`[GetMethodStudentNotes] Status:`, response.status);
 
         if (!response.ok) {
           console.error(
@@ -20,7 +18,6 @@ const GetMethodStudentNotes = (userString: string) => {
         }
 
         const data = await response.json();
-        console.log(`[GetMethodStudentNotes] Data:`, data);
 
         setStudents(data.students || []);
       } catch (error) {
